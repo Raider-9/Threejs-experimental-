@@ -62,15 +62,18 @@ const Customizer = () => {
     try {
       //to call the ai backend to generate an ai image !!!
       setGeneratingImg(true);
-      const response = await fetch("http://localhost:8080/api/v1/dalle", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          prompt,
-        }),
-      });
+      const response = await fetch(
+        "https://project-threejs-ai-kya7.onrender.com/api/v1/dalle",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            prompt,
+          }),
+        }
+      );
 
       const data = await response.json();
       handleDecals(type, `data:image/png;base64,${data.photo}`);
