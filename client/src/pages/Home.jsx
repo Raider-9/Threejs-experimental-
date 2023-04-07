@@ -40,9 +40,9 @@ const Home = () => {
               className="flex flex-col gap-5"
             >
               <p className="max-w-md font-normal text-grey-600 text-base">
-                let your designing immagination
+                An Interactive Project developed by Group - 67 Uem
                 <strong />
-                {""} run wild
+                University Of Engineering And Management : Final Sem Project
               </p>
 
               <CustomButton
