@@ -13,12 +13,13 @@ const config = new Configuration({
 const openai = new OpenAIApi(config);
 
 router.route("/").get((req, res) => {
-  res.status(200).json({ message: "Hello form DALL_E 2.0" });
+  res.status(200).json({ message: "Hello from DALL.E ROUTES" });
 });
 
 router.route("/").post(async (req, res) => {
   try {
     const { prompt } = req.body;
+
     const response = await openai.createImage({
       prompt,
       n: 1,
@@ -31,7 +32,7 @@ router.route("/").post(async (req, res) => {
     res.status(200).json({ photo: image });
   } catch (error) {
     console.error(error);
-    res.status(500).json({ message: "Something went wrong !!!!" });
+    res.status(500).json({ message: "Something went wrong" });
   }
 });
 
